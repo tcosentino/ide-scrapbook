@@ -10,6 +10,16 @@ body,
   width: 100%;
 }
 
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
 .csg-tab-menu:not(.csg-tab-menu-horizontal) {
   border-bottom: 1px solid black;
 }
@@ -77,7 +87,13 @@ $pink: rgba(239, 0, 127, 1);
 
 .contuit-ide-main {
   background-color: $middle-color;
-  .csg-tab-menu .csg-tab.active {
-    background-color: $middle-color;
+  .csg-tab-menu .csg-tab {
+    .fa-close {
+      margin-left: 5px;
+    }
+
+    &.active {
+      background-color: $middle-color;
+    }
   }
 }

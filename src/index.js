@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "normalize.css";
+import "font-awesome/scss/font-awesome.scss";
 import "./styles.scss";
 import IDE from "./components/IDE";
 

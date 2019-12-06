@@ -9,6 +9,8 @@ const TabView = ({
   children,
   horizontal = false,
   collapsible = false,
+  closeable = false,
+  onCloseClicked = () => {},
   ...props
 }) => {
   const [activeTab, setActiveTab] = useState(0);
@@ -35,6 +37,11 @@ const TabView = ({
           }}
         >
           {child.props.title}
+          {closeable && (
+            <button onClick={() => onCloseClicked(index)}>
+              <i className="fa fa-close" />
+            </button>
+          )}
         </div>
       );
 
