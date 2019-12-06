@@ -12,7 +12,7 @@ class IDE extends Component {
         </div>
         <FlexBox fill>
           {/* Sidebar */}
-          <TabView horizontal className="contuit-ide-sidebar">
+          <TabView horizontal collapsible className="contuit-ide-sidebar">
             <TabViewTab title="Processes">List of processes</TabViewTab>
             <TabViewTab title="Vault Structures">List of structures</TabViewTab>
           </TabView>

@@ -5,7 +5,12 @@ import FlexBox from "./FlexBox";
 import FlexBoxFill from "./FlexBoxFill";
 import TabViewTab from "./TabViewTab";
 
-const TabView = ({ children, horizontal = false, ...props }) => {
+const TabView = ({
+  children,
+  horizontal = false,
+  collapsible = false,
+  ...props
+}) => {
   const [activeTab, setActiveTab] = useState(0);
   console.log({ children });
   const titles = [];
@@ -20,7 +25,14 @@ const TabView = ({ children, horizontal = false, ...props }) => {
           className={classNames("csg-tab", { active: activeTab === index })}
           key={child.props.title}
           style={{ float: "left" }}
-          onClick={() => setActiveTab(index)}
+          onClick={() => {
+            let toSet = index;
+            if (collapsible && index === activeTab) {
+              toSet = -1;
+            }
+
+            return setActiveTab(toSet);
+          }}
         >
           {child.props.title}
         </div>
@@ -42,9 +54,11 @@ const TabView = ({ children, horizontal = false, ...props }) => {
       </FlexBox>
 
       {/* Content */}
-      <FlexBoxFill className="csg-tab-content">
-        {content[activeTab]}
-      </FlexBoxFill>
+      {content[activeTab] && (
+        <FlexBoxFill className="csg-tab-content">
+          {content[activeTab]}
+        </FlexBoxFill>
+      )}
     </FlexBox>
   );
 };
