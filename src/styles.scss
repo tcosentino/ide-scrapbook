@@ -1,0 +1,83 @@
+.App {
+  font-family: sans-serif;
+}
+
+html,
+body,
+#root,
+.App {
+  height: 100%;
+  width: 100%;
+}
+
+.csg-tab-menu:not(.csg-tab-menu-horizontal) {
+  border-bottom: 1px solid black;
+}
+
+.csg-tab-menu:not(.csg-tab-menu-horizontal) > div {
+  border-right: 1px solid black;
+}
+
+.csg-tab-menu.csg-tab-menu-horizontal {
+  border-right: 1px solid black;
+}
+.csg-tab-menu.csg-tab-menu-horizontal > div {
+  border-bottom: 1px solid black;
+}
+
+.contuit-ide-main,
+.contuit-ide-sidebar,
+.contuit-ide-titlebar {
+  border: 1px solid black;
+}
+
+// Variables
+$middle-color: rgb(45, 47, 54);
+$secondary-color: rgb(39, 42, 47);
+$secondary-muted-color: hsl(210, 25%, 20%);
+$secondary-text: #dcdcdc;
+$accent-color: rgb(82, 85, 90);
+$accent-text: #fff;
+$pink: rgba(239, 0, 127, 1);
+
+
+/* CSG Styling */
+.csg-tab-menu {
+  background-color: $accent-color;
+  .csg-tab {
+    padding: 3px 5px;
+
+    &.active {
+      border-bottom: 1px solid $pink;
+      background-color: $secondary-color;
+    }
+  }
+
+  &.csg-tab-menu-horizontal {
+    .csg-tab{
+    padding: 10px 5px;
+    text-align: center;
+
+      &.active {
+        border-bottom: none;
+        border-right: 1px solid $pink;
+      }
+    }
+  }
+}
+
+/* IDE Styling */
+.contuit-ide {
+  width: 100%;
+  height: 100%;
+
+  background-color: $secondary-color;
+  color: $secondary-text;
+}
+
+.contuit-ide-main {
+  background-color: $middle-color;
+  .csg-tab-menu .csg-tab.active {
+    background-color: $middle-color;
+  }
+}
