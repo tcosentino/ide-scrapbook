@@ -13,11 +13,16 @@ const IDE = ({ title }) => {
   return (
     <FlexBox rows className="contuit-ide">
       <div className="contuit-ide-titlebar">
-        <h1>{title}</h1>
+        <span>{title}</span>
       </div>
       <FlexBox fill>
         {/* Sidebar */}
-        <TabView horizontal collapsible className="contuit-ide-sidebar">
+        <TabView
+          className="contuit-ide-sidebar"
+          horizontal
+          collapsible
+          resizable
+        >
           <TabViewTab title="Processes">List of processes</TabViewTab>
           <TabViewTab title="Vault Structures">List of structures</TabViewTab>
         </TabView>

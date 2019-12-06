@@ -9,7 +9,7 @@ import IDE from "./components/IDE";
 function App() {
   return (
     <div className="App">
-      <IDE title="Edit Process" />
+      <IDE title="Edit Solution" />
     </div>
   );
 }

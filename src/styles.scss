@@ -76,6 +76,16 @@ $pink: rgba(239, 0, 127, 1);
   }
 }
 
+.csg-resize-border {
+  height: 100%;
+  padding: 0 3px;
+  cursor: col-resize;
+
+  &:hover {
+    background-color: $middle-color;
+  }
+}
+
 /* IDE Styling */
 .contuit-ide {
   width: 100%;
@@ -83,6 +93,10 @@ $pink: rgba(239, 0, 127, 1);
 
   background-color: $secondary-color;
   color: $secondary-text;
+}
+
+.contuit-ide-titlebar {
+  text-align: center;
 }
 
 .contuit-ide-main {
